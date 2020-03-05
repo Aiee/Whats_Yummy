@@ -1,0 +1,25 @@
+<%- include("./partials/header") %>
+<style>
+    body {
+      background-image: url("https://images.pexels.com/photos/1009841/pexels-photo-1009841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+      background-size: cover;
+    }
+</style>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+        <div>
+            <h1 class="text-light font-weight-bold mb-4">Login</h1>
+
+            <form action="/login" method="POST">
+                <input class="form-control border-0" type="text" name="username" placeholder="username">
+                
+                <input class="form-control border-light" type="password" name="password" placeholder="password">
+                <button type="submit" class="myButton btn-block btn-light rounded-lg">login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include("./partials/footer") %>

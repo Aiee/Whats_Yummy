@@ -1,0 +1,40 @@
+/* allign card elemente height */
+.jumbotron{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+p.ex1 {
+    max-width: 150px;
+}
+
+#postIndex {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+#delete-form{
+    display: inline;
+}
+#cardView2 {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+}
+
+.myForm{
+    background-color: rgba(197, 211, 220, 0.5);
+}
+
+.z-5 {
+    z-index: 5;
+}
+
+.myButton {
+    color: 007bff;
+}
+.myButton:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}

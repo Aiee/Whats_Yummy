@@ -1,0 +1,41 @@
+<%- include("../partials/header") %>
+
+<style>
+    body {
+        background-image: url("https://images.pexels.com/photos/616358/pexels-photo-616358.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        background-size: cover;
+    }
+</style>
+
+<div class="container">
+    <header class="jumbotron text-center ">
+        <div class="container">
+            <h1 class="jumbotron-heading">See what are people's favorite</h1>
+            <a class="btn btn-outline-dark btn-lg text-right" href="/posts/new"><i class="fas fa-plus-circle"></i> <strong>Add new post</strong> </a>
+        </div>
+    </header>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- <div class="card-deck"> -->
+            <% posts.forEach(function(post){ %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card">
+                        <img id="postIndex" class="card-img-top" src="<%= post.image %>" alt="<%= post.name %>">
+                        <div class="card-body">
+                        <h5 class="card-title"><%= post.name %></h5>
+                        <p class="card-text"> <div class="text-black-50 d-inline">tags:</div>  <%= post.tags %></p>
+                        <p class="card-footer bg-white">
+                            <a c href="/posts/<%= post._id%>" class="btn btn-info">More Info <i class="fas fa-info-circle"></i></a>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            <%})%>
+        <!-- </div> -->
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,68 @@
+<%- include("../partials/header") %>
+
+<div class="container" id="showContainer">
+    <div class="container">
+
+        <div class="card mt-3">
+            <img id="cardView2" class="card-img-top" src="<%= post.image %>" alt="<%= post.name %>">
+            <div class="card-body">
+                <h5 class="float-right"> 199$/night</h5>
+                <h5 class="card-title"><%= post.name %></h5>
+                <p class="mt-5"><%=post.description%></p>
+                <p class="mt-5">
+                    <em>Submitted by: <%= post.author.username %>, <%= moment(post.createdAt).fromNow() %></em>
+                </p>
+                
+                <% if(currentUser && post.author.id.equals(currentUser._id)){ %> 
+                    <a class="btn btn-warning " href='/posts/<%= post._id %>/edit'><i class="fas fa-edit"></i>  Edit</a>
+                    <form id="delete-form" action="/posts/<%= post._id%>/?_method=DELETE" method="POST">
+                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>  Delete</button>
+                    </form>
+                <% } %> 
+            </div>
+        </div>
+        <hr>
+        <!-- <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-comment"></span>
+                <h3 class="panel-title">
+                    Recent Comments</h3>
+            </div>
+        </div> -->
+        <div class="card card-body bg-light mt-3 pt-0">
+            <h3 class="card-header bg-light pl-0"><i class="fas fa-comments"></i> Recent Comments</h3>
+            <% post.comments.forEach(function(comment){ %>
+                <div class="row">
+                    <div class="card card-body border-0 mt-3 bg-light">
+                        <p class="card-title"><strong>Wrote by <%= comment.author.username%></strong>
+                            <span class="float-right"><%= moment(comment.createdAt).fromNow() %></span>
+                        </p>
+                        <div class="card-text"><%= comment.text%></div>
+                    </div>
+                </div>
+                <hr>
+                <% if(currentUser && comment.author.id.equals(currentUser._id)){ %> 
+                    <div class="card-footer p-0 border-0 bg-light">
+                        <a class="btn btn-xs btn-warning ml-auto" 
+                        href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">
+                        <i class="fas fa-edit"></i>  Edit
+                        </a>
+                        <form id="delete-form" action="/posts/<%= post._id%>/comments/<%= comment._id%>/?_method=DELETE"  method="POST">
+                            <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>  Delete</button>
+                        </form>
+                    </div>
+    
+                <% } %> 
+    
+            <% }) %>
+            <p>
+                <a class="btn btn-success float-right mt-3" href="/posts/<%= post._id %>/comments/new ">
+                    <i class="fas fa-plus-circle"></i> Add new comment
+                </a>
+            </p>
+       </div>
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,27 @@
+<%- include("../partials/header") %>
+
+<style>
+    body {
+      background-image: url("https://cdn.stocksnap.io/img-thumbs/960w/975FOJMNYA.jpg");
+      background-size: cover;
+    }
+</style>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Feeling lucky?</h1>
+            <p class="lead">Not sure what to get? Click Feeling lucky and we will choose for you.</p>
+            <hr class="my-4">
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+           
+            <form class="mt-5 " action="/feeling_lucky" method="POST">
+                <div class="form-group">
+                    <button class="btn btn-warning btn-lg" role="button">Feeling lucky!</a>
+                </div>
+            </form>
+          </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

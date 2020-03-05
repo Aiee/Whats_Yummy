@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+
+
+<style>
+    body {
+        background-image: url("https://cdn.pixabay.com/photo/2016/10/13/11/44/chocolates-1737503_960_720.jpg");
+        background-size: cover;
+    }
+</style>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+        <div class=" rounded px-5 border myForm">
+            <h1 class="mt-2 text-black-60">Add a new post</h1>
+
+
+            <form class="mt-5 " action="/posts" method="POST">
+                <div class="form-group">
+                    <!--<label for="formGroupExampleInput">Example label</label> -->
+                    <input class="form-control" type="text" placeholder="name" name="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="url" name="image">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="tag" name="tag">
+                </div>
+                <div class="form-group shadow-textarea">
+                    <textarea class="form-control z-depth-1" type="text" rows="3" placeholder="Write description here..." name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block rounded-lg">Submit</button>
+                </div>
+                <a href="/posts" class="text-center font-weight-bold btn btn-outline-light rounded-lg">go back</a>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("../partials/footer") %>

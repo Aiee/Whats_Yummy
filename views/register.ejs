@@ -1,0 +1,24 @@
+<%- include("./partials/header") %>
+
+<style>
+    body {
+        background-image: url("https://images.pexels.com/photos/920570/pexels-photo-920570.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+        background-size: cover;
+    }
+</style>
+
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center text-center">
+        <div>
+            <h1 class="text-light mb-4">Sign Up</h1>
+
+            <form action="/register" method="POST">
+                <input class="form-control border-0" type="username" placeholder="username" name="username">
+                <input class="form-control border-0" type="password" placeholder="password" name="password">
+                <button type="submit" class="myButton btn-block btn-light rounded-lg">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
